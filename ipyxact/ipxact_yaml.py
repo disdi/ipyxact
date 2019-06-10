@@ -63,6 +63,7 @@ component:
     - memoryMaps
     - model
     - parameters
+    - vendorExtensions
 enumeratedValue:
   MEMBERS:
     name: str
@@ -167,10 +168,23 @@ register:
     - field
   CHILD:
     - alternateRegisters
+regLock:
+  ATTRIBS:
+    name: str
+  MEMBERS:
+    Description: str
+regLocks:
+  MEMBERS:
+    Description: str
+  CHILDREN:
+    - regLock
 vector:
   MEMBERS:
     left:  IpxactInt
     right: IpxactInt
+vendorExtensions:
+  CHILD:
+    - regLocks
 wire:
   MEMBERS:
     direction: str
