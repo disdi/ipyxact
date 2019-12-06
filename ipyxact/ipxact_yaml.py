@@ -170,12 +170,12 @@ register:
     - alternateRegisters
 regLock:
   ATTRIBS:
-    name: str
-  MEMBERS:
-    Description: str
+    reg_name: str
+    description: str
+    lock_signal: str
 regLocks:
   MEMBERS:
-    Description: str
+    description: str
   CHILDREN:
     - regLock
 vector:
