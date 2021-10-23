@@ -25,8 +25,10 @@ THE SOFTWARE.
 import yaml
 import xml.etree.ElementTree as ET
 
+from yaml import Loader, Dumper
 from . import ipxact_yaml
 import sys
+
 if sys.version_info[0] > 2:
     UNICODE = 'unicode'
 else:
@@ -191,4 +193,4 @@ def _generate_classes(j):
         generatedClass = type(tag[0].upper()+tag[1:], (IpxactItem,), _items)
         globals()[generatedClass.__name__] = generatedClass
 
-_generate_classes(yaml.load(ipxact_yaml.description))
+_generate_classes(yaml.load(ipxact_yaml.description, Loader=Loader))
