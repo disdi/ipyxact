@@ -193,4 +193,4 @@ def _generate_classes(j):
         generatedClass = type(tag[0].upper()+tag[1:], (IpxactItem,), _items)
         globals()[generatedClass.__name__] = generatedClass
 
-_generate_classes(yaml.load(ipxact_yaml.description, Loader=Loader))
+_generate_classes(yaml.safe_load(ipxact_yaml.description))
